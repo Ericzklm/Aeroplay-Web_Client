@@ -4,12 +4,20 @@ import Axios from "axios";
 
 function App() {
 
-  const [username, setUsername] = useState("");
-  const [gameDataList, setGameDataList] = useState([])
+  //const [username, setUsername] = useState("");
+  //const [gameDataList, setGameDataList] = useState([])
+  player_data = []
 
   useEffect(() => {
     Axios.get("https://aeroplay.herokuapp.com/api/get").then((response) => {
-      setGameDataList(response.data);
+      let response_data = response.data;
+      if (response.length != 0) {
+        player_data = response_data;
+      }
+      //setGameDataList(response.data);
+    })
+    .catch((err) => {
+      console.log(err);
     });
   });
 
@@ -72,7 +80,7 @@ function App() {
       <div className="dataSection">
         <div className="globalData">
           <h3>Global Statistics</h3>
-          {getGlobalStats(gameDataList).map((value) => {
+          {getGlobalStats(player_data).map((value) => {
             return (
               <table>
                 <tr>
@@ -91,7 +99,7 @@ function App() {
                 <th>Shot Accuracy</th>
                 <th>Boosts Used</th>
             </tr>
-          {gameDataList.map((value) => {
+          {player_data.map((value) => {
             return (
             <tr>
               <td>{value.username}</td>
