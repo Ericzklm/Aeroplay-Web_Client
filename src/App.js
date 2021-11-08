@@ -9,6 +9,7 @@ function App() {
   useEffect(() => {
     Axios.get("https://aeroplay.herokuapp.com/api/get").then((response) => {
       setGameDataList(response.data);
+    });
   });
 
   const submitUsername = () => {
