@@ -3,7 +3,6 @@ import './App.css';
 import Axios from "axios";
 
 function App() {
-
   const [username, setUsername] = useState("");
   //const [gameDataList, setGameDataList] = useState([])
   let player_data = []
