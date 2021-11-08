@@ -4,7 +4,12 @@ import Axios from "axios";
 
 function App() {
   const [username, setUsername] = useState("");
+<<<<<<< HEAD
   const [gameDataList, setGameDataList] = useState([])
+=======
+  //const [gameDataList, setGameDataList] = useState([])
+  let player_data = []
+>>>>>>> 70a4acb315695a9096442c612c1aa7b81812e3cf
 
   useEffect(() => {
     Axios.get("https://aeroplay.herokuapp.com/api/get").then((response) => {
