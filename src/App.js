@@ -8,6 +8,7 @@ function App() {
 
   useEffect(() => {
     Axios.get("https://aeroplay.herokuapp.com/api/get").then((response) => {
+      console.log("Get Request")
       setGameDataList(response.data);
     });
   });
