@@ -76,7 +76,7 @@ function App() {
         }}></input>
         <button onClick={submitUser}>Submit</button>
         <div>
-          {userData}
+          {console.log(userData)}
         </div>
       </div>
       <div className="dataSection">
