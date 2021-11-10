@@ -37,7 +37,8 @@ function getGlobalStats(data) {
 
 function App() {
 
-  const [gameDataList, setGameDataList] = useState([])
+  const [gameDataList, setGameDataList] = useState([]);
+  const [userData, setUserData] = useState([]);
 
   useEffect(() => {
     Axios.get("https://aeroplay.herokuapp.com/api/get").then((response) => {
@@ -46,17 +47,23 @@ function App() {
     });
   }, []);
 
-  const update_scores = () => {
+  const updateScores = () => {
     Axios.get("https://aeroplay.herokuapp.com/api/get").then((response) => {
       console.log("Get Request");
       setGameDataList(response.data);
     });
   }
 
+  const getUserData = (user) => {
+    Axios.get("https://aeroplay.herokuapp.com/api/user", {username: user}).then((response) => {
+      return response.data();
+    });
+  }
+
   return (
     <div className="App">
       <div className="aeroplayHeader">
-        <h1 onClick={update_scores}>Aeroplay</h1>
+        <h1 onClick={console.log(getUserData("Flycatcher"))}>Aeroplay</h1>
       </div>
       <div className="searchPlayer">
         <label>Search Player:</label>
