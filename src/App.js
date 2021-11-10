@@ -35,6 +35,12 @@ function getGlobalStats(data) {
   }
 }
 
+function getScores() {
+  Axios.get("https://aeroplay.herokuapp.com/api/get").then((response) => {
+    return response.data;
+  });
+}
+
 function App() {
 /*
   const [gameDataList, setGameDataList] = useState([])
@@ -48,10 +54,6 @@ function App() {
   */
   let gameDataList = [];
 
-  Axios.get("https://aeroplay.herokuapp.com/api/get").then((response) => {
-    gameDataList = response.data;
-  });
-
   return (
     <div className="App">
       <div className="aeroplayHeader">
@@ -64,7 +66,7 @@ function App() {
       <div className="dataSection">
         <div className="globalData">
           <h3>Global Statistics</h3>
-          {getGlobalStats(gameDataList).map((value) => {
+          {getGlobalStats(getScores()).map((value) => {
             return (
               <table>
                 <tr>
@@ -83,7 +85,7 @@ function App() {
                 <th>Shot Accuracy</th>
                 <th>Boosts Used</th>
             </tr>
-          {gameDataList.map((value) => {
+          {getScores().map((value) => {
             return (
             <tr>
               <td>{value.username}</td>
