@@ -62,11 +62,17 @@ function App() {
     });
   }
 
-  return (
-    <div className="App">
+  function renderHeader() {
+    return (
       <div className="aeroplayHeader">
         <h1 onClick={updateScores}>Aeroplay</h1>
       </div>
+    )
+  }
+
+  return (
+    <div className="App">
+      {renderHeader}
       <div className="searchPlayer">
         <label>Search Player:</label>
         <input type="text" name="userSearch" placeholder="Player Name" onChange={(search) => {
