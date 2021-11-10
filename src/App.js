@@ -56,7 +56,8 @@ function App() {
 
   const getUserData = () => {
     Axios.get("https://aeroplay.herokuapp.com/api/user", {username: userData}).then((response) => {
-      return response.data();
+      console.log("User Request")
+      return(response.data)
     });
   }
 
@@ -70,7 +71,7 @@ function App() {
         <input type="text" name="userData" placeholder="Player Name" onChange={(search) => {
           setUserData(search.target.value)
         }}></input>
-        <button onClick={console.log(userData)}>Submit</button>
+        <button onClick={console.log(getUserData)}>Submit</button>
       </div>
       <div className="dataSection">
         <div className="globalData">
