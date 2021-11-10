@@ -37,6 +37,7 @@ function getGlobalStats(data) {
 
 function getScores() {
   Axios.get("https://aeroplay.herokuapp.com/api/get").then((response) => {
+    console.log(response.data)
     return response.data;
   });
 }
