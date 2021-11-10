@@ -57,7 +57,7 @@ function App() {
   return (
     <div className="App">
       <div className="aeroplayHeader">
-        <h1 onClick={update_scores}>Aeroplay</h1>
+        <h1 onLoad={update_scores}>Aeroplay</h1>
       </div>
       <div className="searchPlayer">
         <label>Search Player:</label>
