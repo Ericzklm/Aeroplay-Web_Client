@@ -38,6 +38,7 @@ function getGlobalStats(data) {
 function App() {
 
   const [gameDataList, setGameDataList] = useState([]);
+  const [userSearch, setuserSearch] = useState("");
   const [userData, setUserData] = useState([]);
 
   useEffect(() => {
@@ -54,10 +55,10 @@ function App() {
     });
   }
 
-  const getUserData = () => {
-    Axios.get("https://aeroplay.herokuapp.com/api/user", {username: userData}).then((response) => {
+  const submitUser = () => {
+    Axios.get("https://aeroplay.herokuapp.com/api/user", {username: userSearch}).then((response) => {
       console.log("User Request")
-      return(response.data)
+      setUserData(response.data)
     });
   }
 
@@ -68,10 +69,13 @@ function App() {
       </div>
       <div className="searchPlayer">
         <label>Search Player:</label>
-        <input type="text" name="userData" placeholder="Player Name" onChange={(search) => {
-          setUserData(search.target.value)
+        <input type="text" name="userSearch" placeholder="Player Name" onChange={(search) => {
+          setuserSearch(search.target.value)
         }}></input>
-        <button onClick={console.log(getUserData)}>Submit</button>
+        <button onClick={submitUser}>Submit</button>
+        <div>
+          {userData}
+        </div>
       </div>
       <div className="dataSection">
         <div className="globalData">
