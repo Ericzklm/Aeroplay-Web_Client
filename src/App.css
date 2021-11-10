@@ -14,6 +14,8 @@ body {
 }
 
 .searchPlayer {
+  display: flex;
+  justify-content: center;
   font-size: 24px;
   margin-bottom: 30px;
 }
@@ -25,6 +27,12 @@ body {
   font-size: 17px;
   border-radius: 5px;
   border: 1px solid black;
+}
+
+.searchPlayer button {
+  margin: 8px;
+  height: 24px;
+  width: 24px;
 }
 
 .App {
