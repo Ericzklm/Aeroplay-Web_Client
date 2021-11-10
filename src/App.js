@@ -68,6 +68,7 @@ function App() {
         <div className="globalData">
           <h3>Global Statistics</h3>
           {getGlobalStats(getScores()).map((value) => {
+            console.log(getScores())
             return (
               <table>
                 <tr>
