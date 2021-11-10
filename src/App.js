@@ -56,7 +56,7 @@ function App() {
   }
 
   const submitUser = () => {
-    Axios.post("https://aeroplay.herokuapp.com/api/user", {username: "Flycatcher"}).then((response) => {
+    Axios.post("https://aeroplay.herokuapp.com/api/user", {username: userSearch}).then((response) => {
       console.log("User Request");
       console.log("Searching For: " + userSearch);
       console.log("User Request Response: " + response.data);
