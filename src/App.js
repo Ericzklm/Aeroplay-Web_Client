@@ -38,14 +38,13 @@ function getGlobalStats(data) {
 function App() {
 
   const [gameDataList, setGameDataList] = useState([])
-  /*
+
   useEffect(() => {
     Axios.get("https://aeroplay.herokuapp.com/api/get").then((response) => {
       console.log("Get Request")
       setGameDataList(response.data);
     });
-  });
-  */
+  }, []);
 
   const update_scores = () => {
     Axios.get("https://aeroplay.herokuapp.com/api/get").then((response) => {
@@ -55,7 +54,7 @@ function App() {
   }
 
   return (
-    <div className="App" onLoad={update_scores}>
+    <div className="App">
       <div className="aeroplayHeader">
         <h1 onClick={update_scores}>Aeroplay</h1>
       </div>
