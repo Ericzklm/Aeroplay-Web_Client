@@ -101,7 +101,7 @@ function App() {
                 <th>Boosts Used</th>
             </tr>
           {global ? 
-            gameDataList.map((value) => {
+            gameDataList.slice(0,15).map((value) => {
               return (
               <tr>
                 <td>{value.username}</td>
@@ -112,7 +112,7 @@ function App() {
               </tr>
               )
             }) : 
-            userData.map((value) => {
+            userData.slice(0,15).map((value) => {
               return (
                 <tr>
                   <td>{value.username}</td>
