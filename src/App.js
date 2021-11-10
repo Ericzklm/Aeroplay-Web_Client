@@ -36,8 +36,8 @@ function getGlobalStats(data) {
 }
 
 function App() {
-
-  const [gameDataList, setGameDataList] = useState([]);
+  let globalMode = true;
+;  const [gameDataList, setGameDataList] = useState([]);
   const [userSearch, setuserSearch] = useState("");
   const [userData, setUserData] = useState([]);
 
@@ -46,6 +46,7 @@ function App() {
       console.log("Get Request")
       setGameDataList(response.data);
     });
+    global = true;
   }, []);
 
   const updateScores = () => {
@@ -53,6 +54,7 @@ function App() {
       console.log("Get Request");
       setGameDataList(response.data);
     });
+    global = true;
   }
 
   const submitUser = () => {
@@ -60,19 +62,14 @@ function App() {
       console.log("User Request For: " + userSearch);
       setUserData(response.data)
     });
-  }
-
-  function renderHeader() {
-    return (
-      <div className="aeroplayHeader">
-        <h1 onClick={updateScores}>Aeroplay</h1>
-      </div>
-    )
+    global = false;
   }
 
   return (
     <div className="App">
-      {renderHeader}
+      <div className="aeroplayHeader">
+        <h1 onClick={updateScores}>Aeroplay</h1>
+      </div>
       <div className="searchPlayer">
         <label>Search Player:</label>
         <input type="text" name="userSearch" placeholder="Player Name" onChange={(search) => {
@@ -117,17 +114,30 @@ function App() {
                 <th>Shot Accuracy</th>
                 <th>Boosts Used</th>
             </tr>
-          {gameDataList.map((value) => {
-            return (
-            <tr>
-              <td>{value.username}</td>
-              <td>{value.score}</td>
-              <td>{value.balloons_popped}</td>
-              <td>{value.shot_accuracy}</td>
-              <td>{value.boosts_used}</td>
-            </tr>
-            )
-          })}
+          {global ? 
+            gameDataList.map((value) => {
+              return (
+              <tr>
+                <td>{value.username}</td>
+                <td>{value.score}</td>
+                <td>{value.balloons_popped}</td>
+                <td>{value.shot_accuracy}</td>
+                <td>{value.boosts_used}</td>
+              </tr>
+              )
+          }) : 
+            userData.map((value) => {
+              return (
+                <tr>
+                  <td>{value.username}</td>
+                  <td>{value.score}</td>
+                  <td>{value.balloons_popped}</td>
+                  <td>{value.shot_accuracy}</td>
+                  <td>{value.boosts_used}</td>
+                </tr>
+              )
+            })
+          }
           </table>
         </div>
       </div>
