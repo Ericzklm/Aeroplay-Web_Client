@@ -73,6 +73,8 @@ function App() {
           setuserSearch(search.target.value)
         }}></input>
         <button onClick={submitUser}><img src="https://img.icons8.com/ios-glyphs/30/000000/search--v2.png"/></button>
+      </div>
+      <div className="playerData">
         <table>
           {userData.map((value) => {
             return (
