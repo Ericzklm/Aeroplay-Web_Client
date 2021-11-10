@@ -36,7 +36,7 @@ function getGlobalStats(data) {
 }
 
 function App() {
-  /*
+/*
   const [gameDataList, setGameDataList] = useState([])
 
   useEffect(() => {
