@@ -72,7 +72,7 @@ function App() {
         <input type="text" name="userSearch" placeholder="Player Name" onChange={(search) => {
           setuserSearch(search.target.value)
         }}></input>
-        <button onClick={submitUser}><img src={require("/src/img/search_icon.png")} alt="Submit"/></button>
+        <button onClick={submitUser}><img src={require("./img/search_icon.png")} alt="Submit"/></button>
         <table>
           {userData.map((value) => {
             return (
