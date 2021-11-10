@@ -54,8 +54,8 @@ function App() {
     });
   }
 
-  const getUserData = (user) => {
-    Axios.get("https://aeroplay.herokuapp.com/api/user", {username: user}).then((response) => {
+  const getUserData = () => {
+    Axios.get("https://aeroplay.herokuapp.com/api/user", {username: userData}).then((response) => {
       return response.data();
     });
   }
@@ -63,11 +63,14 @@ function App() {
   return (
     <div className="App">
       <div className="aeroplayHeader">
-        <h1 onClick={console.log(getUserData("Flycatcher"))}>Aeroplay</h1>
+        <h1 onClick={updateScores}>Aeroplay</h1>
       </div>
       <div className="searchPlayer">
         <label>Search Player:</label>
-        <input type="text" placeholder="Player Name"></input>
+        <input type="text" name="userData" placeholder="Player Name" onChange={(search) => {
+          setUserData(search.target.value)
+        }}></input>
+        <button onClick={console.log(userData)}>Submit</button>
       </div>
       <div className="dataSection">
         <div className="globalData">
