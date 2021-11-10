@@ -46,6 +46,11 @@ body {
   max-height: 100px;
 }
 
+.searchPlayer img {
+  max-width: 100%;
+  max-height: 100px;
+}
+
 .App {
   text-align: center;
   font-family: "Quicksand";
