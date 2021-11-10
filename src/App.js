@@ -35,17 +35,10 @@ function getGlobalStats(data) {
   }
 }
 
-function getScores() {
-  Axios.get("https://aeroplay.herokuapp.com/api/get").then((response) => {
-    console.log(response.data)
-    return response.data;
-  });
-}
-
 function App() {
-/*
-  const [gameDataList, setGameDataList] = useState([])
 
+  const [gameDataList, setGameDataList] = useState([])
+  /*
   useEffect(() => {
     Axios.get("https://aeroplay.herokuapp.com/api/get").then((response) => {
       console.log("Get Request")
@@ -53,12 +46,17 @@ function App() {
     });
   });
   */
-  let gameDataList = [];
+
+  const update_scores = () => {
+    Axios.get("https://aeroplay.herokuapp.com/api/get").then((response) => {
+      console.log("Get Request")
+      setGameDataList(response.data);
+  }
 
   return (
     <div className="App">
       <div className="aeroplayHeader">
-        <h1>Aeroplay</h1>
+        <h1 onClick={update_scores}>Aeroplay</h1>
       </div>
       <div className="searchPlayer">
         <label>Search Player:</label>
@@ -67,8 +65,7 @@ function App() {
       <div className="dataSection">
         <div className="globalData">
           <h3>Global Statistics</h3>
-          {getGlobalStats(getScores()).map((value) => {
-            console.log(getScores())
+          {getGlobalStats(gameDataList).map((value) => {
             return (
               <table>
                 <tr>
@@ -87,7 +84,7 @@ function App() {
                 <th>Shot Accuracy</th>
                 <th>Boosts Used</th>
             </tr>
-          {getScores().map((value) => {
+          {gameDataList.map((value) => {
             return (
             <tr>
               <td>{value.username}</td>
