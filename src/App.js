@@ -75,9 +75,19 @@ function App() {
           setuserSearch(search.target.value)
         }}></input>
         <button onClick={submitUser}>Submit</button>
-        <div>
-          {console.log(userData)}
-        </div>
+        <table>
+          {userData.map((value) => {
+            return (
+              <tr>
+                <td>{value.username}</td>
+                <td>{value.score}</td>
+                <td>{value.balloons_popped}</td>
+                <td>{value.shot_accuracy}</td>
+                <td>{value.boosts_used}</td>
+              </tr>
+            )
+          })}
+        </table>
       </div>
       <div className="dataSection">
         <div className="globalData">
