@@ -68,10 +68,12 @@ function App() {
         <h1 onClick={updateScores}>Aeroplay</h1>
       </div>
       <div className="searchPlayer">
-        <label>Search Player:</label>
-        <input type="text" name="userSearch" placeholder="Player Name" onChange={(search) => {
-          setuserSearch(search.target.value)
-        }} onSubmit={submitUser}></input>
+        <form onSubmit={submitUser}>
+          <label>Search Player:</label>
+          <input type="text" name="userSearch" placeholder="Player Name" onChange={(search) => {
+            setuserSearch(search.target.value)
+          }}></input>
+        </form>
         <button onClick={submitUser}><img src="https://img.icons8.com/ios-glyphs/30/000000/search--v2.png"/></button>
       </div>
       <div className="playerData">
