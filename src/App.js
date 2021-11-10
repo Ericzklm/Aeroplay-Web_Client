@@ -57,8 +57,9 @@ function App() {
 
   const submitUser = () => {
     Axios.get("https://aeroplay.herokuapp.com/api/user", {username: userSearch}).then((response) => {
-      console.log("User Request")
-      console.log("User Request Response: " + response.data)
+      console.log("User Request");
+      console.log("Searching For:" + userSearch);
+      console.log("User Request Response: " + response.data);
       setUserData(response.data)
     });
   }
