@@ -76,6 +76,7 @@ function App() {
           setuserSearch(search.target.value)
         }} onSubmit={submitUser}></input>
         <button onClick={submitUser}><img src="https://img.icons8.com/ios-glyphs/30/000000/search--v2.png"/></button>
+        <button onClick={updateScores}><img src="https://img.icons8.com/material-rounded/24/000000/globe--v1.png"/></button>
       </div>
       <div className="dataSection">
         <div className="globalData">
