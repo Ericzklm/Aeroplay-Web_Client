@@ -57,9 +57,7 @@ function App() {
 
   const submitUser = () => {
     Axios.post("https://aeroplay.herokuapp.com/api/user", {username: userSearch}).then((response) => {
-      console.log("User Request");
-      console.log("Searching For: " + userSearch);
-      console.log("User Request Response: " + response.data);
+      console.log("User Request For: " + userSearch);
       setUserData(response.data)
     });
   }
@@ -74,7 +72,7 @@ function App() {
         <input type="text" name="userSearch" placeholder="Player Name" onChange={(search) => {
           setuserSearch(search.target.value)
         }}></input>
-        <button onClick={submitUser}>Submit</button>
+        <button onClick={submitUser}><img src="./img/search_icon.png" alt="Submit"/></button>
         <table>
           {userData.map((value) => {
             return (
