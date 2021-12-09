@@ -1,10 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Lobster&family=Pacifico&family=Quicksand:wght@400&display=swap');
+
+@font-face {
+  font-family: 'Renogare';
+  src: local('Renogare'), url(./fonts/Renogare-Regular.otf) format('opentype');
+}
+
 body {
   background-color: azure;
 }
 
+.App {
+  text-align: center;
+  font-family: "Renogare";
+}
+
 .aeroplayHeader {
-  font-size: 44px;
+  font-size: 56px;
   font-family: "Pacifico", cursive;
   color:rgb(134, 177, 233);
 }
@@ -49,11 +60,6 @@ body {
 .searchPlayer img {
   max-width: 100%;
   max-height: 100px;
-}
-
-.App {
-  text-align: center;
-  font-family: "Quicksand";
 }
 
 .dataSection {
