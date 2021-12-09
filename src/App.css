@@ -1,17 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Lobster&family=Pacifico&family=Quicksand:wght@400&display=swap');
 
-@font-face {
-  font-family: 'Renogare';
-  src: local('Renogare'), url(./fonts/Renogare-Regular.otf) format('opentype');
-}
-
 body {
   background-color: azure;
 }
 
 .App {
   text-align: center;
-  font-family: "Renogare";
+  font-family: "Quicksand";
 }
 
 .aeroplayHeader {
