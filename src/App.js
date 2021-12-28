@@ -67,6 +67,7 @@ function App() {
   const [gameDataList, setGameDataList] = useState([]);
   const [userSearch, setuserSearch] = useState("");
   const [userData, setUserData] = useState([]);
+  const [mapSelect, setMapSelect] = useState("");
 
   useEffect(() => {
     Axios.get("https://aeroplay.herokuapp.com/api/get").then((response) => {
@@ -107,11 +108,12 @@ function App() {
       </div>
       <div>
         <label>Map:</label>
-        <select id="map_select">
+        <select id="map_select" onChange={(selected) => setMapSelect(selected.target.value)}>
           <option value="Realistic">Realistic</option>
           <option value="Low-Poly">Low-Poly</option>
         </select>
         {getMapEntries(gameDataList)}
+        {mapSelect}
       </div>
       <div className="dataSection">
         <div className="globalData">
