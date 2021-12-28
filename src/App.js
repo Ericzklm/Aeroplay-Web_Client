@@ -55,7 +55,7 @@ function getMapEntries(entries, selectMap) {
     for (let item in entries) {
       if (entries[item]) {
         if (entries[item].game_map == selectMap) {
-          filtered += entries[item];
+          filtered.push(entries[item]);
         }
       }
     }
