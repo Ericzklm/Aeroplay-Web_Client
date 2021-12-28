@@ -65,6 +65,15 @@ body {
   margin-bottom: 30px;
 }
 
+.mapSelect select {
+  padding: 6px;
+  height: 0%;
+  margin-left: 10px;
+  font-size: 17px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
 .dataSection {
   display: flex;
   justify-content: center;
