@@ -51,9 +51,11 @@ function getMapEntries(entries, selectMap) {
   }
   */
   let filtered = [];
-  for (let item in entries) {
-    if (entries[item].game_map == selectMap) {
-      filtered += entries[item];
+  if (entries) {
+    for (let item in entries) {
+      if (entries[item].game_map == selectMap) {
+        filtered += entries[item];
+      }
     }
   }
   console.log(filtered);
