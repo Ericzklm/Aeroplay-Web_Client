@@ -127,7 +127,7 @@ function App() {
       <div className="dataSection">
         <div className="globalData">
           {global ? <h3>Global Statistics</h3> : <h3>Player Statistics</h3>}
-          {getGlobalStats(global ? getMapEntries(gameDataList, mapSelect) : userData).map((value) => {
+          {getGlobalStats(global ? getMapEntries(gameDataList, mapSelect) : getMapEntries(userData, mapSelect)).map((value) => {
             return (
               <table>
                 <tr>
@@ -147,7 +147,7 @@ function App() {
                 <th>Boosts Used</th>
             </tr>
           {global ? 
-            gameDataList.slice(0,15).map((value) => {
+            getMapEntries(gameDataList, mapSelect).slice(0,15).map((value) => {
               return (
               <tr>
                 <td>{value.username}</td>
@@ -158,7 +158,7 @@ function App() {
               </tr>
               )
             }) : 
-            userData.slice(0,15).map((value) => {
+            getMapEntries(userData, mapSelect).slice(0,15).map((value) => {
               return (
                 <tr>
                   <td>{value.username}</td>
