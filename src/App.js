@@ -92,14 +92,15 @@ function App() {
         }} onSubmit={submitUser}></input>
         <button onClick={submitUser}><img src="https://img.icons8.com/ios-glyphs/90/000000/search--v2.png"/></button>
         <button onClick={updateScores}><img src="https://img.icons8.com/material-rounded/96/000000/globe--v1.png"/></button>
+        <div className="mapSelect">
+          <label>Map:</label>
+          <select id="map_select" onChange={(selected) => setMapSelect(selected.target.value)}>
+            <option value="Realistic">Realistic</option>
+            <option value="Low-Poly">Low-Poly</option>
+          </select>
+        </div>
       </div>
-      <div className="mapSelect">
-        <label>Map:</label>
-        <select id="map_select" onChange={(selected) => setMapSelect(selected.target.value)}>
-          <option value="Realistic">Realistic</option>
-          <option value="Low-Poly">Low-Poly</option>
-        </select>
-      </div>
+      
       <div className="dataSection">
         <div className="globalData">
           {global ? <h3>Global Statistics</h3> : <h3>Player Statistics</h3>}
