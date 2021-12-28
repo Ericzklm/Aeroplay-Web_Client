@@ -60,7 +60,6 @@ function getMapEntries(entries, selectMap) {
       }
     }
   }
-  console.log(filtered);
   return filtered;
 }
 
@@ -124,8 +123,6 @@ function App() {
           <option value="Realistic">Realistic</option>
           <option value="Low-Poly">Low-Poly</option>
         </select>
-        {getMapEntries(gameDataList, mapSelect)}
-        {mapSelect}
       </div>
       <div className="dataSection">
         <div className="globalData">
