@@ -36,20 +36,6 @@ function getGlobalStats(data) {
 }
 
 function getMapEntries(entries, selectMap) {
-  /*
-  let selectMap = document.getElementById("map_select");
-  let filtered = [];
-  if (selectMap) {
-    console.log("here");
-    for (let item in entries) {
-      console.log(entries[item]);
-      if (entries[item].game_map == selectMap.value) {
-        filtered += entries[item];
-        console.log(entries[item]);
-      }
-    }
-  }
-  */
   let filtered = [];
   if (entries) {
     for (let item in entries) {
@@ -61,16 +47,6 @@ function getMapEntries(entries, selectMap) {
     }
   }
   return filtered;
-}
-
-function getMap() {
-  let selectMap = document.getElementById("map_select");
-  if (selectMap) {
-    return selectMap.value;
-  }
-  else {
-    return "a";
-  }
 }
 
 function App() {
@@ -117,7 +93,7 @@ function App() {
         <button onClick={submitUser}><img src="https://img.icons8.com/ios-glyphs/90/000000/search--v2.png"/></button>
         <button onClick={updateScores}><img src="https://img.icons8.com/material-rounded/96/000000/globe--v1.png"/></button>
       </div>
-      <div>
+      <div className="mapSelect">
         <label>Map:</label>
         <select id="map_select" onChange={(selected) => setMapSelect(selected.target.value)}>
           <option value="Realistic">Realistic</option>
