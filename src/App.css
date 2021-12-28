@@ -57,6 +57,14 @@ body {
   max-height: 100px;
 }
 
+.mapSelect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
 .dataSection {
   display: flex;
   justify-content: center;
