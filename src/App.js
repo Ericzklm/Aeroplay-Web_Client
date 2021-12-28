@@ -35,7 +35,7 @@ function getGlobalStats(data) {
   }
 }
 
-function getMapEntries(entries) {
+function getMapEntries(entries, selectMap) {
   /*
   let selectMap = document.getElementById("map_select");
   let filtered = [];
@@ -50,6 +50,7 @@ function getMapEntries(entries) {
     }
   }
   */
+  let filtered = [];
   for (let item in entries) {
     if (entries[item].game_map == selectMap) {
       filtered += entries[item];
@@ -119,7 +120,7 @@ function App() {
           <option value="Realistic">Realistic</option>
           <option value="Low-Poly">Low-Poly</option>
         </select>
-        {getMapEntries(gameDataList)}
+        {getMapEntries(gameDataList, mapSelect)}
         {mapSelect}
       </div>
       <div className="dataSection">
