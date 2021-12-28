@@ -150,7 +150,7 @@ function App() {
                 <th>Boosts Used</th>
             </tr>
           {global ? 
-            getMapEntries(gameDataList, mapSelect).slice(0,15).map((value) => {
+            gameDataList.slice(0,15).map((value) => {
               return (
               <tr>
                 <td>{value.username}</td>
