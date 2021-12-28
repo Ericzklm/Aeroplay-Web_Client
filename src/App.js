@@ -126,7 +126,7 @@ function App() {
       <div className="dataSection">
         <div className="globalData">
           {global ? <h3>Global Statistics</h3> : <h3>Player Statistics</h3>}
-          {getGlobalStats(global ? getMapEntries(gameDataList, selectMap) : userData).map((value) => {
+          {getGlobalStats(global ? getMapEntries(gameDataList, mapSelect) : userData).map((value) => {
             return (
               <table>
                 <tr>
