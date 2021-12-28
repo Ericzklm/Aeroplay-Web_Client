@@ -62,7 +62,10 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 24px;
-  margin-bottom: 30px;
+  margin-left: 20px;
+  background-color: #c1cccc;
+  padding: 6px 20px;
+  border-radius: 8px;
 }
 
 .mapSelect select {
