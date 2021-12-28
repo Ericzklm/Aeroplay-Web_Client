@@ -37,7 +37,7 @@ function getGlobalStats(data) {
 
 function getMapEntries(entries) {
   let selectMap = document.getElementById("map_select");
-  filtered = [];
+  let filtered = [];
   if (selectMap) {
     for (let item in entries) {
       if (entries[item].game_map == selectMap.value) {
@@ -60,7 +60,7 @@ function getMap() {
 
 function App() {
   let globalMode = true;
-;  const [gameDataList, setGameDataList] = useState([]);
+  const [gameDataList, setGameDataList] = useState([]);
   const [userSearch, setuserSearch] = useState("");
   const [userData, setUserData] = useState([]);
 
