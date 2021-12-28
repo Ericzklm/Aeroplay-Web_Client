@@ -37,7 +37,7 @@ function getGlobalStats(data) {
 
 function getMap() {
   let selectMap = document.getElementById("map_select");
-  if (selectMap.length != 0) {
+  if (selectMap) {
     return selectMap.value;
   }
   else {
