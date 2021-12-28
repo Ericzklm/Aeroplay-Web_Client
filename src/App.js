@@ -78,6 +78,13 @@ function App() {
         <button onClick={submitUser}><img src="https://img.icons8.com/ios-glyphs/90/000000/search--v2.png"/></button>
         <button onClick={updateScores}><img src="https://img.icons8.com/material-rounded/96/000000/globe--v1.png"/></button>
       </div>
+      <div>
+        <label>Map:</label>
+        <select>
+          <option value="Realistic">Realistic</option>
+          <option value="Low-Poly">Low-Poly</option>
+        </select>
+      </div>
       <div className="dataSection">
         <div className="globalData">
           {global ? <h3>Global Statistics</h3> : <h3>Player Statistics</h3>}
