@@ -72,7 +72,7 @@ function getMap() {
 
 function App() {
   let globalMode = true;
-  const [gameDataList, setGameDataList] = useState([]);
+  const [gameDataList, setGameDataList] = useState([mapSelect]);
   const [userSearch, setuserSearch] = useState("");
   const [userData, setUserData] = useState([]);
   const [mapSelect, setMapSelect] = useState("Realistic");
