@@ -39,7 +39,9 @@ function getMapEntries(entries) {
   let selectMap = document.getElementById("map_select");
   let filtered = [];
   if (selectMap) {
+    console.log("here");
     for (let item in entries) {
+      console.log(entries[item]);
       if (entries[item].game_map == selectMap.value) {
         filtered += entries[item];
         console.log(entries[item]);
