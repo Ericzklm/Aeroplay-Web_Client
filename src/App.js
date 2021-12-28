@@ -36,6 +36,7 @@ function getGlobalStats(data) {
 }
 
 function getMapEntries(entries) {
+  /*
   let selectMap = document.getElementById("map_select");
   let filtered = [];
   if (selectMap) {
@@ -46,6 +47,12 @@ function getMapEntries(entries) {
         filtered += entries[item];
         console.log(entries[item]);
       }
+    }
+  }
+  */
+  for (let item in entries) {
+    if (entries[item].game_map == selectMap) {
+      filtered += entries[item];
     }
   }
   console.log(filtered);
@@ -67,7 +74,7 @@ function App() {
   const [gameDataList, setGameDataList] = useState([]);
   const [userSearch, setuserSearch] = useState("");
   const [userData, setUserData] = useState([]);
-  const [mapSelect, setMapSelect] = useState("");
+  const [mapSelect, setMapSelect] = useState("Realistic");
 
   useEffect(() => {
     Axios.get("https://aeroplay.herokuapp.com/api/get").then((response) => {
