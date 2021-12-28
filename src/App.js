@@ -35,6 +35,11 @@ function getGlobalStats(data) {
   }
 }
 
+function getMap() {
+  let selectMap = document.getElementById("map_select");
+  return selectMap.value;
+}
+
 function App() {
   let globalMode = true;
 ;  const [gameDataList, setGameDataList] = useState([]);
@@ -80,10 +85,11 @@ function App() {
       </div>
       <div>
         <label>Map:</label>
-        <select>
+        <select id="map_select">
           <option value="Realistic">Realistic</option>
           <option value="Low-Poly">Low-Poly</option>
         </select>
+        {getMap()}
       </div>
       <div className="dataSection">
         <div className="globalData">
