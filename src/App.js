@@ -111,7 +111,7 @@ function App() {
           <option value="Realistic">Realistic</option>
           <option value="Low-Poly">Low-Poly</option>
         </select>
-        {getMapEntries()}
+        {getMapEntries(gameDataList)}
       </div>
       <div className="dataSection">
         <div className="globalData">
