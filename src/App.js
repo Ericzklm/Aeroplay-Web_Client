@@ -80,10 +80,19 @@ function App() {
     global = false;
   }
 
+  const macDownload = () => {
+    Axios.get("https://aeroplay.herokuapp.com/MacOS").then((response) => {
+      console.log("MacOS download");
+    });
+  }
+
   return (
     <div className="App">
       <div className="aeroplayHeader">
         <h1 onClick={updateScores}>Aeroplay</h1>
+      </div>
+      <div className="macDownload">
+        <h3 onClick={macDownload}>Download for MacOS</h3>
       </div>
       <div className="searchPlayer">
         <label>Search Player:</label>
