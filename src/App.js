@@ -91,8 +91,11 @@ function App() {
       <div className="aeroplayHeader">
         <h1 onClick={updateScores}>Aeroplay</h1>
       </div>
-      <div className="macDownload">
-        <h3 onClick={macDownload}>Download for MacOS</h3>
+      <div className="download">
+        <button onClick={macDownload}>
+          <img src="https://img.icons8.com/material-rounded/96/000000/download--v2.png"/>
+          Download for MacOS
+        </button>
       </div>
       <div className="searchPlayer">
         <label>Search Player:</label>
