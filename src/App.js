@@ -92,7 +92,7 @@ function App() {
         <h1 onClick={updateScores}>Aeroplay</h1>
       </div>
       <div className="download">
-        <button onClick={macDownload}>
+        <button onClick="location.href = 'https://drive.google.com/uc?id=10SRmmwc2BfGoA-bBRE0sfiGRCw6iPv-7&export=download';">
           <img src="https://img.icons8.com/material-rounded/96/000000/download--v2.png"/>
           Download for MacOS
         </button>
