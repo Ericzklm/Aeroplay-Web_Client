@@ -81,7 +81,8 @@ function App() {
   }
 
   const openWindow = (url) => {
-    return () => openInNewTab(url);
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+    if (newWindow) newWindow.opener = null;
   }
 
   return (
