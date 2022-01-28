@@ -103,12 +103,16 @@ function App() {
   return (
     <div className="App">
       <div className="aeroplayHeader">
-        <h1 onClick={updateScores}>Aeroplay</h1>
+        <h1 onClick={() => openWindow('https://www.youtube.com/watch?v=dQw4w9WgXcQ')}>Aeroplay</h1>
       </div>
       <div className="download">
         <button onClick={() => openWindow('https://drive.google.com/uc?id=10SRmmwc2BfGoA-bBRE0sfiGRCw6iPv-7&export=download')}>
           <img src="https://img.icons8.com/material-rounded/96/000000/download--v2.png"/>
           Download for MacOS
+        </button>
+        <button onClick={() => openWindow('')}>
+          <img src="https://img.icons8.com/material-rounded/96/000000/download--v2.png"/>
+          Download for Windows
         </button>
       </div>
       <div className="searchPlayer">
