@@ -106,7 +106,7 @@ function App() {
         <h1 onClick={() => openWindow('https://www.youtube.com/watch?v=dQw4w9WgXcQ')}>Aeroplay</h1>
       </div>
       <div className="download">
-        <button onClick={() => openWindow('https://drive.google.com/uc?id=1NYWlvMYK_N183LuXON387HHa0RioA_v4&export=download')}>
+        <button onClick={() => openWindow('https://drive.google.com/uc?id=10SRmmwc2BfGoA-bBRE0sfiGRCw6iPv-7&export=download')}>
           <img src="https://img.icons8.com/material-rounded/96/000000/download--v2.png"/>
           Download for MacOS
         </button>
