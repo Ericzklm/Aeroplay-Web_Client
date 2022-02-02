@@ -110,7 +110,7 @@ function App() {
           <img src="https://img.icons8.com/material-rounded/96/000000/download--v2.png"/>
           Download for MacOS
         </button>
-        <button onClick={() => openWindow('')}>
+        <button onClick={() => openWindow('https://drive.google.com/uc?id=1N4CrwjidAtC3ua01Y6W8nwcnznfyPOtg&export=download')}>
           <img src="https://img.icons8.com/material-rounded/96/000000/download--v2.png"/>
           Download for Windows
         </button>
